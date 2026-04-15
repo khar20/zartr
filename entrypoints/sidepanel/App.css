@@ -1,0 +1,12 @@
+#root {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: light) {
+  .extracted-text-area {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+  }
+}
