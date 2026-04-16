@@ -2,9 +2,9 @@ import './App.css';
 
 function App() {
   return (
-    <>
-      <h1>Zartr</h1>
-    </>
+    <div>
+      <h1>zartr</h1>
+    </div>
   );
 }
 
