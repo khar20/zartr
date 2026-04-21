@@ -16,4 +16,14 @@ export default defineBackground(() => {
       browser.browserAction.onClicked.addListener(() => sidebarAction.toggle());
     }
   }
+
+  // welcome page
+  browser.runtime.onInstalled.addListener((details) => {
+    if (details.reason === 'install') {
+      const url = browser.runtime.getURL('/welcome.html');
+      browser.tabs
+        .create({ url: url })
+        .catch((error) => console.error('[Background]', error));
+    }
+  })
 });
