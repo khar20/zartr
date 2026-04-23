@@ -1,0 +1,127 @@
+/* theme variables */
+:root {
+  /* dark theme (default) */
+  --bg-main: #09090b;
+  --bg-card: #0c0c0e;
+  --border-ui: #27272a;
+  --text-main: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.1);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-main: #fafafa;
+    --bg-card: #ffffff;
+    --border-ui: #e4e4e7;
+    --text-main: #09090b;
+    --text-muted: #71717a;
+    --accent: #0d9488;
+    --accent-soft: rgba(13, 148, 136, 0.05);
+
+    color-scheme: light;
+  }
+}
+
+/* base setup */
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* brutalist typography */
+h1,
+h2,
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+}
+
+.label-caps {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* layout elements */
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-ui);
+  padding: 1.25rem;
+  border-radius: 4px;
+}
+
+/* buttons */
+button {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-ui);
+  color: var(--text-main);
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+button.primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  button.primary {
+    color: #000000;
+  }
+}
+
+/* utility classes */
+.text-accent {
+  color: var(--accent);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-ui);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
